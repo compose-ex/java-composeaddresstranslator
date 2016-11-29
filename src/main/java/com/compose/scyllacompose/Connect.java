@@ -52,6 +52,7 @@ public class Connect {
             cluster = Cluster.builder()
                     .addContactPointsWithPorts(translator.getContactPoints())
                     .withCredentials("scylla", "PASSWORD")
+                    .withAddressTranslator(translator)
                     .build();
             Session session = cluster.connect();
 
